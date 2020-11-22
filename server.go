@@ -50,16 +50,16 @@ func New(port int, prod bool) (*Server, error) {
 
 	// Old style config read - this will be going away in Fragmenta 2.0
 	// use server/config instead from the app
-	err := s.readConfig()
-	if err != nil {
-		return s, err
-	}
-	err = s.readArguments()
-	if err != nil {
-		return s, err
-	}
+	//err := s.readConfig()
+	//if err != nil {
+	//	return s, err
+	//}
+	//err = s.readArguments()
+	//if err != nil {
+	//	return s, err
+	//}
 
-	return s, err
+	return s, nil
 }
 
 // Port returns the port of the server
