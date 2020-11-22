@@ -36,17 +36,11 @@ type Server struct {
 }
 
 // New creates a new server instance
-func New() (*Server, error) {
-
-	// Check environment variable to see if we are in production mode
-	prod := false
-	if os.Getenv("FRAG_ENV") == "production" {
-		prod = true
-	}
-
+func New(port int, prod bool) (*Server, error) {
+	
 	// Set up a new server
 	s := &Server{
-		port:              3000,
+		port:              port,
 		production:        prod,
 		configProduction:  make(map[string]string),
 		configDevelopment: make(map[string]string),
